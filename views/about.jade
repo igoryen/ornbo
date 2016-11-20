@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    
+    include includes/header
+
+    h1= title
+    p developer information
+
+    mixin mydetails(items)
+        each item in items
+            p 
+                b Name: 
+                span #{item.fname} #{item.lname}
+            p 
+                b Education: 
+                span #{item.education}
+            p 
+                b Address: 
+                span #{item.address}
+            p 
+                b Currently: 
+                span #{item.title} at #{item.company}
+
+
+    - details = [{fname: 'Igor', lname: 'Entaltsev', education: 'Computer Programming and Analysis', address: 'North York, ON', company: 'Saatchi & Saatchi (TPM Division)', title: 'Web Developer'}]
+    
+    mixin mydetails(details)
+
+    include includes/footer
