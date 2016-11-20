@@ -1,6 +1,9 @@
 extends layout
 
 block content
+    
+    include includes/header
+
     h1= title
     p Welcome to #{title}
 
@@ -20,3 +23,6 @@ block content
 
     - each scientist in scientists
         li #{scientist.fname} #{scientist.lname} - #{scientist.achieved}
+
+
+    include includes/footer
