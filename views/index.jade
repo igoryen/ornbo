@@ -1,5 +1,13 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	h1= title
+	p Welcome to #{title}
+
+	section#wrapper
+		section
+			p
+				span This is a span with a p within a div!
+			p
+	- var creator = "Igoryen"
+				span Created by #{creator}
