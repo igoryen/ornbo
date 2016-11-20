@@ -18,5 +18,9 @@ router.post('/create', function(req,res) {
     res.send(req.body);
 });
 
+router.get('/users/:id', function(req, res) {
+    res.send('show content for user id' + req.params.id);
+});
+
 
 module.exports = router;
