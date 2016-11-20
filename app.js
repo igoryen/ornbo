@@ -10,7 +10,9 @@ var users = require('./routes/users');
 
 var app = express();
 
-
+var listener = app.listen(8888, function(){
+    console.log('Listening on port ' + listener.address().port); //Listening on port 8888
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
