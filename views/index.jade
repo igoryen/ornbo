@@ -15,3 +15,8 @@ block content
     - users = ['Sally', 'Joseph', 'Michael', 'Sanjay'];
     - each user in users
         p= user
+
+    - scientists = [{fname: "Linus",lname: "Torvalds",achieved: "Linux kernel"},{fname: "Donald",lname: "Knuth",achieved: "Computer Science"},{fname: "Ada",lname: "Lovelace",achieved: "the first algorithm intended to be carried out by a machine"},{fname: "Steve",lname: "Vozniak",achieved: "single-handedly developed the 1976 Apple I, which was the computer that launched Apple"},{fname: "Grace",lname: "Hopper",achieved: "the first compiler for a computer programming language and was one of those who popularized the idea of machine-independent programming languages which led to the development of COBOL"}];
+
+    - each scientist in scientists
+        li #{scientist.fname} #{scientist.lname} - #{scientist.achieved}
