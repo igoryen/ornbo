@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    
+    include includes/header
+
+    h1= title
+    p create information
+
+    h2 Form
+    form(method='post', action='/create')
+        fieldset
+            legend Add a user
+            p
+                label First name
+                input(name='user[first_name]')
+            p
+                label Last name
+                input(name='user[last_name]')
+            p
+                input(type='submit', value='Save')
+
+
+
+    include includes/footer

@@ -10,4 +10,13 @@ router.get('/about', function(req, res, next) {
   res.render('about', { title: 'Ornbo' });
 });
 
+router.get('/create', function(req, res, next) {
+  res.render('create', { title: 'Ornbo' });
+});
+
+router.post('/create', function(req,res) {
+    res.send(req.body);
+});
+
+
 module.exports = router;
