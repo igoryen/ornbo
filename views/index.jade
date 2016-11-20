@@ -25,4 +25,12 @@ block content
         li #{scientist.fname} #{scientist.lname} - #{scientist.achieved}
 
 
+    mixin fam_members(members)
+        ul
+            each member in members
+                li= member
+
+    - family = ['Father', 'Mother', 'Son', 'Daughter']
+    mixin fam_members(family)
+
     include includes/footer
