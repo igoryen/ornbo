@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var fs = require('fs');
 var data = "Data from app.js! Written to /comments";
 var file = 'comments/test.txt';
+var charencoding = 'utf8'; // @3
 fs.writeFile(file, data, function(err){ // @2
     if(!err){
         console.log('Wrote data to file comments/test.txt');
@@ -15,7 +16,7 @@ fs.writeFile(file, data, function(err){ // @2
         throw err;
     }
 });
-fs.readFile(file, 'utf8', function( err, data ){
+fs.readFile(file, charencoding, function( err, data ){
     if (!err) {
         console.log(file + ' says: ' + data);
     } else {
