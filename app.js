@@ -5,6 +5,16 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var fs = require('fs');
+var data = "Data from app.js! Written to /comments";
+fs.writeFile('comments/test.txt', data, function(err){ // @2
+    if(!err){
+        console.log('Wrote data to file comments/test.txt');
+    } else {
+        throw err;
+    }
+});
+
 var index = require('./routes/index'); // @1
 var users = require('./routes/users');
 
