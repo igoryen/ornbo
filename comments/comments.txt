@@ -1,0 +1,2 @@
+@1. Similar to: require('./routes/index.js');
+    you truncate the 'js' extension.

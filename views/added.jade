@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    
+    include includes/header
+
+    h1= title
+    p New user information
+
+    p 
+        b First Name: 
+        span= user.first_name
+
+    p 
+        b Last Name: 
+        span= user.last_name
+
+    p 
+        b Address: 
+        span= user.address
+
+    p 
+        b Facebook friends: 
+        span= user.facebook_friends
+
+    include includes/footer
