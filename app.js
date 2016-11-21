@@ -24,6 +24,8 @@ fs.readFile(file, charencoding, function( err, data ){
     }
 });
 
+console.log('The env is: ' + process.env.SECRET_KEY);
+
 var index = require('./routes/index'); // @1
 var users = require('./routes/users');
 
