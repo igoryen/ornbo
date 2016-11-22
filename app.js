@@ -4,6 +4,16 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/todo_development', function(err){
+    if (!err) {
+        console.log('app.js says: Connected to MongoDB!')
+    } else { 
+        throw err;
+    }
+});
+
 
 var fs = require('fs');
 var data = "Data from app.js! Written to /comments";
