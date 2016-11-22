@@ -33,5 +33,11 @@ router.get('/added', function(req, res){
     res.render('added', {title: 'User', user: user});
 });
 
+router.get('/tasks', function(req, res) {
+    res.render('tasks/index', { 
+        title: 'Todos index view' 
+    });
+});
+
 
 module.exports = router;
