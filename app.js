@@ -4,16 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/todo_development');
-var Schema = mongoose.Schema;
-var ObjectId = Schema.ObjectId;
-
-var Task = new Schema({
-    task: String
-});
-var Task = mongoose.model('Task', Task);
 
 var fs = require('fs');
 var data = "Data from app.js! Written to /comments";
@@ -38,6 +28,7 @@ console.log('The env is: ' + process.env.SECRET_KEY);
 
 var index = require('./routes/index'); // @1
 var users = require('./routes/users');
+var tasks = require('./routes/tasks');
 
 var app = express();
 
@@ -49,8 +40,6 @@ var listener = app.listen(8888, function(){
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -59,6 +48,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/tasks', tasks);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
