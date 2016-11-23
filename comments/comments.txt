@@ -2,3 +2,20 @@
     you truncate the 'js' extension.
 @2. target file: test.txt. content to write: data.
 @3. if you don't provide character encoding, the raw buffer will be returned.
+@4. the route to allow users to enter a task
+#5. the route to receive the data. The route receives the POST request and 
+    creates a new record
+#6. instantiate a new model (called Task) and pass the POST data to it.
+    To be parsed correctly, body-parser should be required 
+    and urlencoded extended should be set to true. 
+#7. call a Save on the new record. If there are no errors, the new record 
+    gets saved to MongoDB.
+#8. If there are no saving errors, redirect user to the index view at /tasks.
+#9. The Model declaration; Defining the schema for the model.
+#10. So that the Task variable can be used to create new records.
+#11. Declare the task as a String.
+#12. `doc` contains any records that have been returned from MongoDB.
+    `doc` is passing through to the view layer.
+#13. You see '/', it means 'tasks/'
+#14. req.body.task is 'undefined' unless this is set to true
+    to support URL-encoded bodies.

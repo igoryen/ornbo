@@ -5,12 +5,18 @@ block content
     [#{title}]
 
     h1 Your Tasks
+
+    p
+        a(href='/tasks/new', class='btn primary') Add a Task
+
     - if(docs.length)
-        tr
-            th Task
-                each task in docs
-                    tr
-                        td #{task.task}
+        span number of records: #{docs.length}
+        table
+            tr
+                th Task
+                    each task in docs
+                        tr
+                            td #{task.task}
     - else
         p You don't have any tasks!
 
